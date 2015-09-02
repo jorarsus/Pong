@@ -1,0 +1,21 @@
+﻿Build started 2/9/2015 15:59:06 PM.
+     1>Project "C:\Users\jorge\documents\visual studio 2015\Projects\Pong\Pong\Pong.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jorge\Documents\Visual Studio 2015\Projects\Pong\Debug\Pong.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\SDL2\SDL2_gfx-1.0.1\Win32\Release" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\jorge\Documents\Visual Studio 2015\Projects\Pong\Debug\Pong.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jorge\Documents\Visual Studio 2015\Projects\Pong\Debug\Pong.lib" /MACHINE:X86 Debug\Ball.obj
+         Debug\GameObject.obj
+         Debug\Main.obj
+         Debug\Paddle.obj
+         Debug\Pong.obj
+         Debug\stdafx.obj
+         D:\SDL2\lib\SDL2.lib
+         D:\SDL2\lib\SDL2main.lib
+     1>MSVCRT.lib(initializers.obj) : warning LNK4098: defaultlib 'msvcrtd.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>Ball.obj : error LNK2019: unresolved external symbol _filledCircleRGBA referenced in function "public: virtual void __thiscall Ball::display(struct SDL_Renderer *)" (?display@Ball@@UAEXPAUSDL_Renderer@@@Z)
+     1>Pong.obj : error LNK2019: unresolved external symbol __imp___invalid_parameter referenced in function "struct std::_List_node<class GameObject *,void *> * __cdecl std::_Allocate<struct std::_List_node<class GameObject *,void *> >(unsigned int,struct std::_List_node<class GameObject *,void *> *,bool)" (??$_Allocate@U?$_List_node@PAVGameObject@@PAX@std@@@std@@YAPAU?$_List_node@PAVGameObject@@PAX@0@IPAU10@_N@Z)
+     1>Pong.obj : error LNK2019: unresolved external symbol __imp___CrtDbgReportW referenced in function "struct std::_List_node<class GameObject *,void *> * __cdecl std::_Allocate<struct std::_List_node<class GameObject *,void *> >(unsigned int,struct std::_List_node<class GameObject *,void *> *,bool)" (??$_Allocate@U?$_List_node@PAVGameObject@@PAX@std@@@std@@YAPAU?$_List_node@PAVGameObject@@PAX@0@IPAU10@_N@Z)
+     1>C:\Users\jorge\Documents\Visual Studio 2015\Projects\Pong\Debug\Pong.exe : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "C:\Users\jorge\documents\visual studio 2015\Projects\Pong\Pong\Pong.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.20
