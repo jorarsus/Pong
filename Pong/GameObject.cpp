@@ -2,8 +2,10 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject()
+GameObject::GameObject(float x, float y)
 {
+	x_pos_ = x;
+	y_pos_ = y;
 }
 
 

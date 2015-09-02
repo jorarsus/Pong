@@ -55,8 +55,8 @@ int Pong::setup()
 	}
 
 	// Create gameObjects
-	//gameObjectList_.push_front(new Paddle());
-	gameObjectList_.push_front(new Ball(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)); //Ball at the center screen
+	gameObjectList_.push_front(new Paddle(PADDLES_OFFSET, SCREEN_HEIGHT / 2)); // Left Paddle
+	gameObjectList_.push_front(new Ball(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)); //Ball at the center screen
 
 	initialized_ = true;
 

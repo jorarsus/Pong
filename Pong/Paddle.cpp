@@ -2,9 +2,9 @@
 #include "Paddle.h"
 
 
-Paddle::Paddle()
+Paddle::Paddle(float x, float y): GameObject(x,y)
 {
-	x_pos_ = y_pos_ = 0.0;
+	
 }
 
 
@@ -14,6 +14,12 @@ Paddle::~Paddle()
 
 void Paddle::display(SDL_Renderer* renderer)
 {
+	boxColor(renderer,
+		x_pos_ - width / 2,
+		y_pos_ - length / 2,
+		x_pos_ + width / 2,
+		y_pos_ + length / 2,
+		0xFFFFFFFF);
 }
 
 void Paddle::update()

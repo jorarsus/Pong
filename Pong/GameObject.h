@@ -9,7 +9,7 @@
 class GameObject
 {
 public:
-	GameObject();
+	GameObject(float x = 0.0, float y = 0.0);
 	~GameObject();
 
 	// Pure abstract methods that must be implemented when instantiating a derived class
@@ -17,7 +17,11 @@ public:
 	virtual void update() =0;
 	virtual void handleEvent() =0;
 
+	virtual void updateCollisionBox(float x, float y, float w, float h);
+	SDL_Rect* collisionBox_;
+
 protected:
+	// position of the upper left corner of the object
 	float x_pos_ = 0.0;
 	float y_pos_ = 0.0;
 	float x_speed_ = 0.0;

@@ -1,18 +1,12 @@
 #include "stdafx.h"
 #include "Ball.h"
 
-// @TODO: Member initialization does not work here?
-Ball::Ball(float x, float y)
+// Passing arguments to the base class
+Ball::Ball(float x, float y) : GameObject(x, y)
 {
-	x_pos_ = x;
-	y_pos_ = y;
-
 	//Testing movement
 	x_speed_ = 1.0;
 	y_speed_ = -2.0;
-
-	// Create collision Rectangle with the same position as the ball (ball is positioned by its center)
-	updateCollisionBox(x_pos_ - radius_, y_pos_ - radius_, 2 * radius_, 2 * radius_);
 }
 
 
@@ -38,6 +32,7 @@ void Ball::update()
 
 	// Update collision box
 	updateCollisionBox(x_pos_ - radius_, y_pos_ - radius_, 2 * radius_, 2 * radius_);
+
 
 	// Check for collisions with borders
 	// Top border
