@@ -12,7 +12,7 @@ public:
 	virtual void update();
 	virtual void handleEvent();
 
-	const float size_ = 10;
+	const float radius_ = 10;
 };
 
 

@@ -1,19 +1,12 @@
-﻿Build started 2/9/2015 18:28:38 PM.
-     1>Project "C:\Users\jorge\Desktop\Pong\Pong\Pong.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2/9/2015 22:21:37 PM.
+     1>Project "C:\Users\jorge\Source\Repos\Pong\Pong\Pong.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"D:\SDL2\SDL2_gfx-1.0.1" /ID:\SDL2\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"stdafx.h" /Fp"Release\Pong.pch" /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"D:\SDL2\SDL2_gfx-1.0.1" /ID:\SDL2\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Ball.cpp GameObject.cpp Main.cpp Paddle.cpp Pong.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"D:\SDL2\SDL2_gfx-1.0.1" /ID:\SDL2\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Ball.cpp
          Ball.cpp
-     1>Ball.cpp(22): warning C4244: 'argument': conversion from 'const float' to 'Sint16', possible loss of data
-     1>Ball.cpp(22): warning C4244: 'argument': conversion from 'float' to 'Sint16', possible loss of data
-         GameObject.cpp
-         Main.cpp
-         Paddle.cpp
-         Pong.cpp
-     1>Pong.cpp(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+     1>Ball.cpp(25): warning C4244: 'argument': conversion from 'const float' to 'Sint16', possible loss of data
+     1>Ball.cpp(25): warning C4244: 'argument': conversion from 'float' to 'Sint16', possible loss of data
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jorge\Desktop\Pong\Release\Pong.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SDL2\SDL2_gfx-1.0.1\Win32\Release" SDL2_gfx.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\jorge\Desktop\Pong\Release\Pong.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jorge\Desktop\Pong\Release\Pong.lib" /MACHINE:X86 /SAFESEH Release\Ball.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jorge\Source\Repos\Pong\Release\Pong.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SDL2\SDL2_gfx-1.0.1\Win32\Release" SDL2_gfx.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\jorge\Source\Repos\Pong\Release\Pong.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jorge\Source\Repos\Pong\Release\Pong.lib" /MACHINE:X86 /SAFESEH Release\Ball.obj
          Release\GameObject.obj
          Release\Main.obj
          Release\Paddle.obj
@@ -21,16 +14,16 @@
          Release\stdafx.obj
          D:\SDL2\lib\SDL2.lib
          D:\SDL2\lib\SDL2main.lib
-            Creating library C:\Users\jorge\Desktop\Pong\Release\Pong.lib and object C:\Users\jorge\Desktop\Pong\Release\Pong.exp
+            Creating library C:\Users\jorge\Source\Repos\Pong\Release\Pong.lib and object C:\Users\jorge\Source\Repos\Pong\Release\Pong.exp
      1>MSVCRT.lib(initializers.obj) : warning LNK4098: defaultlib 'msvcrtd.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
          Generating code
-         108 of 203 functions (53.2%) were compiled, the rest were copied from previous compilation.
+         1 of 205 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
            0 functions were new in current compilation
            0 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
-         Pong.vcxproj -> C:\Users\jorge\Desktop\Pong\Release\Pong.exe
-     1>Done Building Project "C:\Users\jorge\Desktop\Pong\Pong\Pong.vcxproj" (Build target(s)).
+         Pong.vcxproj -> C:\Users\jorge\Source\Repos\Pong\Release\Pong.exe
+     1>Done Building Project "C:\Users\jorge\Source\Repos\Pong\Pong\Pong.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.77
+Time Elapsed 00:00:00.96
