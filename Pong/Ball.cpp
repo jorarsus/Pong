@@ -22,9 +22,6 @@ void Ball::display(SDL_Renderer* renderer)
 void Ball::update()
 {	
 	Pong* pong = Pong::instance();
-	int windowWidth = pong->SCREEN_WIDTH;
-	int windowHeight = pong->SCREEN_HEIGHT;
-	int zero = 0;
 
 	// Update ball position
 	x_pos_ += x_speed_ / pong->DESIRED_FPS;
@@ -33,8 +30,17 @@ void Ball::update()
 	// Update collision box
 	updateCollisionBox(x_pos_ - radius_, y_pos_ - radius_, 2 * radius_, 2 * radius_);
 
+	// Check for collisions
+	checkCollisions();
+}
 
-	// Check for collisions with borders
+void Ball::checkCollisions()
+{
+	Pong* pong = Pong::instance();
+	int windowWidth = pong->SCREEN_WIDTH;
+	int windowHeight = pong->SCREEN_HEIGHT;
+	int zero = 0;
+
 	// Top border
 	if (SDL_IntersectRectAndLine(collisionBox_, &zero, &zero, &windowWidth, &zero))
 	{
@@ -59,7 +65,8 @@ void Ball::update()
 	// TODO: Check for collision with paddles
 }
 
-void Ball::handleEvent()
+
+void Ball::handleKeyboardState(const Uint8 * keyboardState)
 {
 }
 

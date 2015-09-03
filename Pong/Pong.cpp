@@ -56,7 +56,7 @@ int Pong::setup()
 
 	// Create gameObjects
 	gameObjectList_.push_front(new Paddle(PADDLES_OFFSET, SCREEN_HEIGHT / 2)); // Left Paddle
-	gameObjectList_.push_front(new Ball(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)); //Ball at the center screen
+	gameObjectList_.push_front(new Ball(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)); // Ball at the center screen
 
 	initialized_ = true;
 
@@ -65,19 +65,24 @@ int Pong::setup()
 
 void Pong::processInput()
 {
-	SDL_Event e;
-	while (SDL_PollEvent(&e))
+	// Update Events
+	SDL_PumpEvents();
+
+	// Process exit event
+	if (SDL_HasEvent(SDL_QUIT))
 	{
-		switch (e.type) 
-		{
-			case SDL_QUIT:
-				quit_ = true;
-				cout << "Bye!" << endl;
-				break;
-			case SDL_KEYDOWN:
-				// @TODO: pass the event to all gameObjects
-				break;
-		}
+		quit_ = true;
+		cout << "Bye!" << endl;
+	}
+
+	// Get Keyboard state
+	const Uint8* state = SDL_GetKeyboardState(NULL);
+
+	// Pass keyboard state to bameObjects
+	for (list<GameObject*>::iterator it = gameObjectList_.begin(); it != gameObjectList_.end(); it++)
+	{
+		if((*it)->acceptsInputEvents_)
+			(*it)->handleKeyboardState(state);
 	}
 }
 

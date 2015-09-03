@@ -15,10 +15,12 @@ public:
 	// Pure abstract methods that must be implemented when instantiating a derived class
 	virtual void display(SDL_Renderer* renderer) =0;
 	virtual void update() =0;
-	virtual void handleEvent() =0;
+	virtual void handleKeyboardState(const Uint8* keyboardState) =0;
 
 	virtual void updateCollisionBox(float x, float y, float w, float h);
 	SDL_Rect* collisionBox_;
+
+	bool acceptsInputEvents_ = false;
 
 protected:
 	// position of the upper left corner of the object

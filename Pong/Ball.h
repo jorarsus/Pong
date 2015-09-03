@@ -10,8 +10,10 @@ public:
 
 	virtual void display(SDL_Renderer* renderer);
 	virtual void update();
-	virtual void handleEvent();
+	virtual void handleKeyboardState(const Uint8* keyboardState);
 
+private:
+	void checkCollisions();
 	const float radius_ = 10;
 };
 

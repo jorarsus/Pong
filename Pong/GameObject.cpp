@@ -13,6 +13,7 @@ GameObject::~GameObject()
 {
 }
 
+
 void GameObject::updateCollisionBox(float x, float y, float w, float h)
 {
 	// lazy initialization
