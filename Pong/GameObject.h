@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SDL.h>
+#include <iostream>
 #include <SDL2_gfxPrimitives.h>
 
 /*
@@ -19,6 +20,8 @@ public:
 
 	virtual void updateCollisionBox(float x, float y, float w, float h);
 	SDL_Rect* collisionBox_;
+
+	virtual void checkPaddleCollision(SDL_Rect* paddle);
 
 	bool acceptsInputEvents_ = false;
 

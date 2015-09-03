@@ -25,3 +25,8 @@ void GameObject::updateCollisionBox(float x, float y, float w, float h)
 	collisionBox_->w = w;
 	collisionBox_->h = h;
 }
+
+void GameObject::checkPaddleCollision(SDL_Rect * paddle)
+{
+	std::cout << "GameObject check paddle collision" << std::endl;
+}

@@ -62,12 +62,19 @@ void Ball::checkCollisions()
 		x_speed_ = -x_speed_;
 	}
 
-	// TODO: Check for collision with paddles
 }
 
 
 void Ball::handleKeyboardState(const Uint8 * keyboardState)
 {
+}
+
+void Ball::checkPaddleCollision(SDL_Rect * paddle)
+{
+	if (SDL_HasIntersection(collisionBox_, paddle))
+	{
+		x_speed_ = -x_speed_;
+	}
 }
 
 

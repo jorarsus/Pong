@@ -12,6 +12,8 @@ public:
 	virtual void update();
 	virtual void handleKeyboardState(const Uint8* keyboardState);
 
+	void checkPaddleCollision(SDL_Rect* paddle);
+
 private:
 	void checkCollisions();
 	const float radius_ = 10;

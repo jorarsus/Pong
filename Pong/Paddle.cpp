@@ -3,7 +3,8 @@
 
 using namespace std;
 
-Paddle::Paddle(float x, float y): GameObject(x,y)
+Paddle::Paddle(float x, float y, Uint8 upKey, Uint8 downKey): 
+	GameObject(x,y), upKey_(upKey), downKey_(downKey)
 {
 	acceptsInputEvents_ = true;
 }
@@ -64,11 +65,11 @@ void Paddle::update()
 
 void Paddle::handleKeyboardState(const Uint8 * state)
 {
-	if (state[SDL_SCANCODE_UP])
+	if (state[upKey_])
 	{
 		y_speed_ = -speed_;
 	}
-	else if (state[SDL_SCANCODE_DOWN])
+	else if (state[downKey_])
 	{
 		y_speed_ = speed_;
 	}

@@ -54,13 +54,32 @@ int Pong::setup()
 		return -1;
 	}
 
-	// Create gameObjects
-	gameObjectList_.push_front(new Paddle(PADDLES_OFFSET, SCREEN_HEIGHT / 2)); // Left Paddle
-	gameObjectList_.push_front(new Ball(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)); // Ball at the center screen
+	createObjects();
 
 	initialized_ = true;
 
 	return 0;
+}
+
+/*
+	Create gameObjects and push them to a list
+*/
+void Pong::createObjects()
+{
+	// Left paddle
+	leftPaddle_ = new Paddle(PADDLES_OFFSET, SCREEN_HEIGHT / 2, SDL_SCANCODE_W, SDL_SCANCODE_S);
+	gameObjectList_.push_front(leftPaddle_);
+
+	// Right paddle
+	rightPaddle_ = new Paddle(SCREEN_WIDTH - PADDLES_OFFSET, SCREEN_HEIGHT / 2, SDL_SCANCODE_UP, SDL_SCANCODE_DOWN);
+	gameObjectList_.push_front(rightPaddle_);
+
+	// Ball
+	ball_ = new Ball(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+	gameObjectList_.push_front(ball_);
+
+	
+	
 }
 
 void Pong::processInput()
@@ -87,14 +106,21 @@ void Pong::processInput()
 }
 
 /*
-	Update position of all gameObjects
+	Main Update
 */
 void Pong::update()
 {
+	// Update all objects
 	for (list<GameObject*>::iterator it = gameObjectList_.begin(); it != gameObjectList_.end(); it++)
 	{
 		(*it)->update();
 	}
+
+	// Check collision of ball with paddles
+	// Maybe use a class CollisionManager
+	ball_->checkPaddleCollision(leftPaddle_->collisionBox_);
+	ball_->checkPaddleCollision(rightPaddle_->collisionBox_);
+
 }
 
 /*
