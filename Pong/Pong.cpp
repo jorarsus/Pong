@@ -117,7 +117,6 @@ void Pong::update()
 	}
 
 	// Check collision of ball with paddles
-	// Maybe use a class CollisionManager
 	ball_->checkPaddleCollision(leftPaddle_->collisionBox_);
 	ball_->checkPaddleCollision(rightPaddle_->collisionBox_);
 

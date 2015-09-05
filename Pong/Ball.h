@@ -13,10 +13,14 @@ public:
 	virtual void handleKeyboardState(const Uint8* keyboardState);
 
 	void checkPaddleCollision(SDL_Rect* paddle);
-
+	
 private:
 	void checkCollisions();
+
 	const float radius_ = 10;
+
+	float last_x_pos_;
+	float last_y_pos_;
 };
 
 

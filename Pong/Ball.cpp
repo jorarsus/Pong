@@ -23,6 +23,9 @@ void Ball::update()
 {	
 	Pong* pong = Pong::instance();
 
+	last_x_pos_ = x_pos_;
+	last_y_pos_ = y_pos_;
+
 	// Update ball position
 	x_pos_ += x_speed_ / pong->DESIRED_FPS;
 	y_pos_ += y_speed_ / pong->DESIRED_FPS;
@@ -71,9 +74,32 @@ void Ball::handleKeyboardState(const Uint8 * keyboardState)
 
 void Ball::checkPaddleCollision(SDL_Rect * paddle)
 {
-	if (SDL_HasIntersection(collisionBox_, paddle))
+	SDL_Rect* collision_result = new SDL_Rect();
+	if (SDL_IntersectRect(collisionBox_, paddle, collision_result))
 	{
-		x_speed_ = -x_speed_;
+		// Front collision
+		if (collision_result->h >= collision_result->w)
+			x_speed_ = -x_speed_;
+
+		else
+		{
+			// Set ball y position to avoid it to enter the paddle
+
+			// Top collision
+			if (y_pos_ < paddle->y)
+			{
+				y_pos_ = paddle->y - radius_;
+			}
+
+			// Down collision
+			else
+			{
+				y_pos_ = paddle->y + paddle->h + radius_;
+			}
+
+			x_speed_ = -x_speed_;
+			y_speed_ = -y_speed_;
+		}
 	}
 }
 

@@ -14,7 +14,7 @@ public:
 
 private:
 	const float length_ = 80.0;
-	const float width_ = 20.0;
+	const float width_ = 10.0;
 	const float speed_ = 2.0;
 	Uint8 upKey_;
 	Uint8 downKey_;
